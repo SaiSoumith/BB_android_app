@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryBackground"
-    tools:context=".activities.MainActivity">
+    tools:context=".TruckRegisterFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryBackground"
+        >
 
 
     <TextView
@@ -91,4 +95,5 @@
         android:textAllCaps="false"
         android:textColor="@color/colorFormBackground" />
 
-</RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>
