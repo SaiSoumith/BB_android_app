@@ -1,10 +1,14 @@
 package com.example.userapp
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.system.Os.bind
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.example.userapp.activities.MainActivity
+import com.example.userapp.activities.adapter
+import kotlinx.android.synthetic.main.fragment_total_trucks.*
 
 
 class TotalTrucksFragment : Fragment() {
@@ -21,6 +25,14 @@ class TotalTrucksFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+        (activity as MainActivity?)?.getProducts()
 
     }
+
+
+    override fun onResume() {
+        super.onResume()
+        adapter.notifyDataSetChanged()
+    }
+
 }

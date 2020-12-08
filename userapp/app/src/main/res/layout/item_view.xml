@@ -3,8 +3,17 @@
     android:orientation="horizontal"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="70dp">
+    android:layout_height="70dp"
+    android:background="#F1F1F1"
+    android:layout_margin="16dp">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/user_id"
+        android:layout_weight="0.5"
+        android:layout_margin="12dp"
 
+        />
     <TextView
         android:layout_width="0dp"
         android:layout_height="match_parent"

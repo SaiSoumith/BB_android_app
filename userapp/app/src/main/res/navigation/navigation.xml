@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_titleFragment_to_truckRegisterFragment"
             app:destination="@id/truckRegisterFragment" />
+        <action
+            android:id="@+id/action_titleFragment_to_totalTrucksFragment"
+            app:destination="@id/totalTrucksFragment" />
     </fragment>
     <fragment
         android:id="@+id/truckRegisterFragment"
@@ -22,5 +25,16 @@
         <action
             android:id="@+id/action_truckRegisterFragment_to_titleFragment"
             app:destination="@id/titleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/totalTrucksFragment"
+        android:name="com.example.userapp.TotalTrucksFragment"
+        android:label="fragment_total_trucks"
+        tools:layout="@layout/fragment_total_trucks" >
+        <action
+            android:id="@+id/action_totalTrucksFragment_to_titleFragment2"
+            app:destination="@id/titleFragment"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

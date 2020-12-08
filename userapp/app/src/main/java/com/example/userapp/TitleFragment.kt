@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.navigation.ui.navigateUp
 import kotlinx.android.synthetic.main.fragment_title.*
 
 class TitleFragment : Fragment() {
@@ -25,6 +26,10 @@ class TitleFragment : Fragment() {
         buttonRegisterTruck.setOnClickListener {
             Navigation.findNavController(view)
                     .navigate(R.id.action_titleFragment_to_truckRegisterFragment)
+        }
+        buttonViewRegisteredTrucks.setOnClickListener {
+            Navigation.findNavController(view)
+                    .navigate(R.id.action_titleFragment_to_totalTrucksFragment)
         }
     }
 

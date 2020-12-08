@@ -1,6 +1,7 @@
 package com.example.userapp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,16 +9,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
 import com.example.userapp.api.RetrofitClient
-import com.example.userapp.models.DefaultResponse
+import com.example.userapp.api.TruckService
+import com.example.userapp.models.total_products
 import kotlinx.android.synthetic.main.fragment_truck_register.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 
 class TruckRegisterFragment : Fragment() {
@@ -69,21 +66,21 @@ class TruckRegisterFragment : Fragment() {
             }
 
 
-            RetrofitClient.instance.postProduct(email, name, password, school)
-                    .enqueue(object : Callback<DefaultResponse> {
-                        override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-                            Toast.makeText(activity?.applicationContext, t.message, Toast.LENGTH_LONG).show()
-                        }
+           RetrofitClient.instance.postProduct(email, name, password, school)
+                    .enqueue(object : Callback<total_products> {
+                        override fun onFailure(call: Call<total_products>, t: Throwable) {
+                            Log.d("CHEEZYCODE","errror in fetching",t)
+                               }
 
                         override fun onResponse(
-                                call: Call<DefaultResponse>,
-                                response: Response<DefaultResponse>
+                                call: Call<total_products>,
+                                response: Response<total_products>
                         ) {
-                            Toast.makeText(
-                                    activity?.applicationContext,
-                                    response.body()?.message,
-                                    Toast.LENGTH_LONG
-                            ).show()
+                            val totalProducts=response.body()
+                            if(totalProducts!=null)
+                            {
+                                Log.d("CHEEZYCODE",totalProducts.toString())
+                            }
                         }
 
                     })
