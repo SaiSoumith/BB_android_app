@@ -69,7 +69,7 @@ class TruckRegisterFragment : Fragment() {
             }
 
 
-            RetrofitClient.instance.products(email, name, password, school)
+            RetrofitClient.instance.postProduct(email, name, password, school)
                     .enqueue(object : Callback<DefaultResponse> {
                         override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
                             Toast.makeText(activity?.applicationContext, t.message, Toast.LENGTH_LONG).show()

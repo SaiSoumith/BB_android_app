@@ -2,4 +2,5 @@
     <string name="app_name">userapp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="view_details_button_text">View Details</string>
 </resources>

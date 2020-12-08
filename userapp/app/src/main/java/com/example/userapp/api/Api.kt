@@ -10,11 +10,13 @@ interface Api {
 
     @FormUrlEncoded
     @POST("products")
-    fun products(
+    fun postProduct(
         @Field("email") email:String,
         @Field("name") name:String,
         @Field("password") password:String,
         @Field("school") school:String
     ):Call<DefaultResponse>
+
+
 
 }

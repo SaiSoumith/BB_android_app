@@ -13,7 +13,7 @@ object RetrofitClient {
 
             val requestBuilder=original.newBuilder()
                     .addHeader("Accept","application/json")
-                .method(original.method(),original.body())
+                .method(original.method, original.body)
 
             val request=requestBuilder.build()
             chain.proceed(request)
