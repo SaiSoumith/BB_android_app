@@ -6,8 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.navigation.Navigation
+
 import com.example.userapp.api.RetrofitClient
 import com.example.userapp.api.TruckService
 import com.example.userapp.models.total_products
@@ -19,6 +23,7 @@ import retrofit2.Response
 
 class TruckRegisterFragment : Fragment() {
 
+lateinit var optionText:String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,43 +35,71 @@ class TruckRegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        buttonSignUp.setOnClickListener {
-
-            val email = editTextEmail.text.toString().trim()
-            val password = editTextPassword.text.toString().trim()
-            val name = editTextName.text.toString().trim()
-            val school = editTextSchool.text.toString().trim()
 
 
+        val options= arrayOf("Type 1 ","Type 2","Type 3","Type 4")
+        spinnerBodyType.adapter= activity?.applicationContext?.let { ArrayAdapter<String>(it,android.R.layout.simple_list_item_1,options) }
+        spinnerBodyType.onItemSelectedListener=object :AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                optionText=options.get(position)
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                optionText=""
+            }
 
 
-            if (email.isEmpty()) {
-                editTextEmail.error = "Email required"
-                editTextEmail.requestFocus()
+        }
+
+
+        buttonRegister.setOnClickListener {
+
+            val height = editTextHeight .text.toString().trim()
+            val length = editTextLength .text.toString().trim()
+            val tonnage = editTextTonnage.text.toString().trim()
+            val truckRegNum = editTextTruckRegNum.text.toString().trim()
+            val bodyType=optionText
+
+
+
+            if (height.isEmpty()) {
+                editTextHeight.error = "Height required"
+                editTextHeight.requestFocus()
                 return@setOnClickListener
             }
 
 
-            if (password.isEmpty()) {
-                editTextPassword.error = "Password required"
-                editTextPassword.requestFocus()
+            if (length .isEmpty()) {
+                editTextLength .error = "length required"
+                editTextLength .requestFocus()
                 return@setOnClickListener
             }
 
-            if (name.isEmpty()) {
-                editTextName.error = "Name required"
-                editTextName.requestFocus()
+            if (tonnage.isEmpty()) {
+                editTextTonnage.error = "tonnage required"
+                editTextTonnage.requestFocus()
                 return@setOnClickListener
             }
 
-            if (school.isEmpty()) {
-                editTextSchool.error = "School required"
-                editTextSchool.requestFocus()
+            if (truckRegNum.isEmpty()) {
+                editTextTruckRegNum.error = "truckregNum required"
+                editTextTruckRegNum.requestFocus()
                 return@setOnClickListener
             }
 
 
-           RetrofitClient.instance.postProduct(email, name, password, school)
+            if (bodyType.isEmpty()) {
+                editTextHeight.error = "BodyType required"
+                editTextHeight.requestFocus()
+                return@setOnClickListener
+            }
+
+            RetrofitClient.instance.postProduct(height,length, tonnage, truckRegNum,bodyType)
                     .enqueue(object : Callback<total_products> {
                         override fun onFailure(call: Call<total_products>, t: Throwable) {
                             Log.d("CHEEZYCODE","errror in fetching",t)

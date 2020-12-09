@@ -16,10 +16,11 @@ interface TruckService {
     @FormUrlEncoded
     @POST("products")
     fun postProduct(
-        @Field("email") email:String,
-        @Field("name") name:String,
-        @Field("password") password:String,
-        @Field("school") school:String
+        @Field("height") height:String,
+        @Field("length") length:String,
+        @Field("tonnage") tonnage:String,
+        @Field("truckRegNum") truckRegNum:String,
+        @Field("bodyType") bodyType:String
     )
     :Call<total_products>
 

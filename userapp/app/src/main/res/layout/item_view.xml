@@ -22,14 +22,14 @@
         android:layout_margin="12dp"
 
         />
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:id="@+id/view_details_button"
-        android:layout_weight="2"
-        android:text="@string/view_details_button_text"
-        android:layout_margin="5dp"
-        />
+<!--    <Button-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/view_details_button"-->
+<!--        android:layout_weight="2"-->
+<!--        android:text="@string/view_details_button_text"-->
+<!--        android:layout_margin="5dp"-->
+<!--        />-->
 
 
 </LinearLayout>

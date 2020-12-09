@@ -18,7 +18,7 @@
         android:layout_above="@id/linearLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
-        android:text="Sign Up"
+        android:text="Register Truck"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
         android:textColor="@color/colorFormBackground" />
 
@@ -34,64 +34,96 @@
         android:padding="10dp">
 
         <EditText
-            android:id="@+id/editTextEmail"
+            android:id="@+id/editTextTruckRegNum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="5dp"
-            android:hint="email"
-            android:inputType="textEmailAddress" />
-
-        <EditText
-            android:id="@+id/editTextPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:drawablePadding="5dp"
-            android:hint="password"
-            android:inputType="textPassword" />
-
-        <EditText
-            android:id="@+id/editTextName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:drawablePadding="5dp"
-            android:hint="name"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/editTextSchool"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:drawablePadding="5dp"
-            android:hint="school"
+            android:hint="Truck Reg Num"
             android:inputType="text" />
+
+        <Spinner
+            android:id="@+id/spinnerBodyType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:drawablePadding="5dp"
+            />
+<!--            android:hint="BodyType"-->
+<!--            android:inputType="text" />-->
+
+        <EditText
+            android:id="@+id/editTextTonnage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:drawablePadding="5dp"
+            android:hint="Tonnage"
+            android:inputType="text" />
+
+
+
+        <EditText
+            android:id="@+id/editTextHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:drawablePadding="5dp"
+            android:hint="Height"
+            android:inputType="text" />
+
+      <EditText
+        android:id="@+id/editTextLength"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:drawablePadding="5dp"
+        android:hint="Length"
+        android:inputType="text" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+        <TextView
+            android:id="@+id/editTextDocuments"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:paddingTop="13dp"
+            android:hint="Documents upload"
+             />
+    <Button
+        android:id="@+id/imageUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:drawablePadding="5dp"
+        android:layout_marginLeft="20dp"
+        android:text="+"/>
+    </LinearLayout>
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textViewLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/linearLayout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:lineSpacingExtra="7dp"
-        android:text="Already have an Account?\nClick to Login"
-        android:textAlignment="center"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        android:textColor="@color/colorFormBackground" />
+<!--    <TextView-->
+<!--        android:id="@+id/textViewLogin"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/linearLayout"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:lineSpacingExtra="7dp"-->
+<!--        android:text="Already have an Account?\nClick to Login"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"-->
+<!--        android:textColor="@color/colorFormBackground" />-->
 
     <Button
-        android:id="@+id/buttonSignUp"
+        android:id="@+id/buttonRegister"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="15dp"
         android:background="@color/colorPrimaryDark"
-        android:text="Sign Up"
+        android:text="Register"
         android:textAllCaps="false"
         android:textColor="@color/colorFormBackground" />
 
