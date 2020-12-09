@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:id="@+id/user_id"
+        android:id="@+id/item_view_user_id"
         android:layout_weight="0.5"
         android:layout_margin="12dp"
 
@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:id="@+id/user_full_name"
+        android:id="@+id/item_view_truck_reg_num"
         android:layout_weight="5"
         android:layout_margin="12dp"
 

@@ -34,7 +34,6 @@
         <action
             android:id="@+id/action_totalTrucksFragment_to_titleFragment2"
             app:destination="@id/titleFragment"
-            app:popUpTo="@id/titleFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
     </fragment>
 </navigation>

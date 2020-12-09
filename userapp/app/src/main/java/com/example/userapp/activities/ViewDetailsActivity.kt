@@ -16,19 +16,22 @@ class ViewDetailsActivity : AppCompatActivity() {
         actionBar!!.setDisplayShowHomeEnabled(true)
 
           var intent=intent
-        val vName=intent.getStringExtra("iName")
+        val vHeight=intent.getStringExtra("iHeight")
         val vId=intent.getStringExtra("iId")
-        val vEmail=intent.getStringExtra("iEmail")
-        val vPassword=intent.getStringExtra("iPassword")
-        val vSchool=intent.getStringExtra("iSchool")
+        val vTonnage=intent.getStringExtra("iTonnage")
+        val vTruckRegNum=intent.getStringExtra("iTruckRegNum")
+        val vBodyType=intent.getStringExtra("iBodyType")
+        val vLength=intent.getStringExtra("iLength")
 
         actionBar.setTitle(vId)
-        a_user_id.text=vId
-        a_user_full_name.text=vName
-        a_email.text=vEmail
-        a_password.text=vPassword
-        a_school.text=vSchool
+        a_id.text=vId
+        a_height.text=vHeight
+        a_tonnage.text=vTonnage
+        a_truck_reg_num.text=vTruckRegNum
+        a_body_type.text=vBodyType
+        a_length.text=vLength
 
-
+//
+//
     }
 }

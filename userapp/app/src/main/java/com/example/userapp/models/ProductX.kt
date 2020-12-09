@@ -4,14 +4,16 @@ package com.example.userapp.models
 import com.google.gson.annotations.SerializedName
 
 data class ProductX(
-    @SerializedName("email")
-    val email: String,
+    @SerializedName("height")
+    val height: String,
     @SerializedName("id")
     val id: Int,
-    @SerializedName("name")
-    val name: String,
-    @SerializedName("password")
-    val password: String,
-    @SerializedName("school")
-    val school: String
+    @SerializedName("length")
+    val length: String,
+    @SerializedName("tonnage")
+    val tonnage: String,
+    @SerializedName("truckRegNum")
+    val truckRegNum: String,
+    @SerializedName("bodyType")
+    val bodyType: String
 )

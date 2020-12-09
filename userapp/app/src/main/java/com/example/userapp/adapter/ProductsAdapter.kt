@@ -26,23 +26,24 @@ class ProductsAdapter(val context: Context, val products: List<ProductX>) : Recy
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
       val product= this.products[position]
         holder.productId.text= product.id.toString()
-        holder.productName.text=product.name
+        holder.productRegNum.text=product.truckRegNum
 
         holder.itemView.setOnClickListener {
 
               val model   =products.get(position)
-              var gEmail:String  =model.email
+              var gHeight:String  =model.height
               var gId:String     =model.id.toString()
-              var gName:String   =model.name
-              var gPassword:String =model.password
-              var gSchool:String =model.school
-
+              var gTonnage:String   =model.tonnage
+              var gTruckRegNum:String =model.truckRegNum
+              var gBodyType:String =model.bodyType
+              var gLength:String=model.length
              val intent=Intent(context, ViewDetailsActivity::class.java)
-            intent.putExtra("iEmail", gEmail)
-            intent.putExtra("iName", gName)
+            intent.putExtra("iHeight", gHeight)
+            intent.putExtra("iTonnage", gTonnage)
             intent.putExtra("iId", gId)
-            intent.putExtra("iPassword", gPassword)
-            intent.putExtra("iSchool", gSchool)
+            intent.putExtra("iTruckRegNum", gTruckRegNum)
+            intent.putExtra("iBodyType", gBodyType)
+            intent.putExtra("iLength", gLength)
 
             context.startActivity(intent)
 
@@ -56,8 +57,10 @@ class ProductsAdapter(val context: Context, val products: List<ProductX>) : Recy
     class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
 
-        var productName = itemView.findViewById<TextView>(R.id.user_full_name)
-        var productId = itemView.findViewById<TextView>(R.id.user_id)
+        var productRegNum = itemView.findViewById<TextView>(R.id.item_view_truck_reg_num)
+        var productId = itemView.findViewById<TextView>(R.id.item_view_user_id)
+
+
     }
 
 }
